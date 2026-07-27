@@ -16,3 +16,51 @@
  * 2. Store the product data in a single collection.
  * 3. Display the product data using console.log.
  */
+
+type CartItem = {
+    productCode: string;
+    productName: string;
+    unitPrice: number;
+    quantity: number;
+    isFreeShipping: boolean;
+};
+
+const cartItems: CartItem[] = [
+    {
+        productCode: "KB001",
+        productName: "Mechanical Keyboard",
+        unitPrice: 850000,
+        quantity: 1,
+        isFreeShipping: true
+    },
+    {
+        productCode: "MS002",
+        productName: "Wireless Mouse",
+        unitPrice: 275000,
+        quantity: 2,
+        isFreeShipping: true
+    },
+    {
+        productCode: "HD003",
+        productName: "External SSD 1TB",
+        unitPrice: 1650000,
+        quantity: 1,
+        isFreeShipping: false
+    },
+    {
+        productCode: "HP004",
+        productName: "Gaming Headset",
+        unitPrice: 720000,
+        quantity: 1,
+        isFreeShipping: true
+    }
+];
+
+cartItems.forEach((item, index) => {
+    console.log(`\nData Produk di Keranjang ke-${index + 1}`);
+    console.log(`Kode Produk      : ${item.productCode}`);
+    console.log(`Nama Produk      : ${item.productName}`);
+    console.log(`Harga Satuan     : ${item.unitPrice}`);
+    console.log(`Jumlah           : ${item.quantity}`);
+    console.log(`Gratis Ongkir    : ${item.isFreeShipping ? "Ya" : "Tidak"}`);
+});

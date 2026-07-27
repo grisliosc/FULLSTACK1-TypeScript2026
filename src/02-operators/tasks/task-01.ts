@@ -14,3 +14,20 @@
  *  - Final payment
  * 2. Display the calculation results.
  */
+
+//DEKLARASI
+const friedRiceQty: number = 3;
+const friedRicePrice: number = 18000;
+
+const mineralWaterQty: number = 2;
+const mineralWaterPrice: number = 5000;
+
+const discount: number = 10000;
+
+//NGITUNG BOS
+const totalFriedRice: number = friedRiceQty * friedRicePrice;
+const totalMineralWater: number = mineralWaterQty * mineralWaterPrice;
+const totalBeforeDiscount: number = totalFriedRice + totalMineralWater;
+const finalPayment: number = totalBeforeDiscount - discount;
+
+console.log("=== Cafeteria Purchase Calculation ===");
