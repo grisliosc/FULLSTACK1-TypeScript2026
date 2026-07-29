@@ -22,3 +22,41 @@
  *  - Calculate the final payment.
 
  */
+
+// Product information
+const keyboardPrice: number = 850000;
+const keyboardQty: number = 1;
+
+const mousePrice: number = 275000;
+const mouseQty: number = 2;
+
+const mousePadPrice: number = 120000;
+const mousePadQty: number = 1;
+
+// Calculate subtotal
+const subtotal: number = (keyboardPrice * keyboardQty) + (mousePrice * mouseQty) + (mousePadPrice * mousePadQty);
+
+// Count total purchased items
+let totalItems: number = 0;
+totalItems += keyboardQty;
+totalItems += mouseQty;
+totalItems += mousePadQty;
+
+// Determine discount eligibility
+const discountThreshold: number = 1000000;
+const discountRate: number = 0.10;
+let discount: number = 0;
+
+if (subtotal > discountThreshold) {
+    discount = subtotal * discountRate;
+}
+
+// Calculate final payment
+const finalPayment: number = subtotal - discount;
+
+console.log("=== Shopping Cart Summary ===");
+console.log(`Subtotal: Rp${subtotal}`);
+console.log(`Total items purchased: ${totalItems}`);
+console.log(`Discount applied: Rp${discount}`);
+console.log(`Final amount to be paid: Rp${finalPayment}`);
+                

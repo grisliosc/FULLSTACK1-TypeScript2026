@@ -31,3 +31,7 @@ const totalBeforeDiscount: number = totalFriedRice + totalMineralWater;
 const finalPayment: number = totalBeforeDiscount - discount;
 
 console.log("=== Cafeteria Purchase Calculation ===");
+console.log(`Total price of fried rice: Rp${totalFriedRice}`);
+console.log(`Total price of drinks: Rp${totalMineralWater}`);
+console.log(`Total price before discount: Rp${totalBeforeDiscount}`);
+console.log(`Final amount to be paid: Rp${finalPayment}`);

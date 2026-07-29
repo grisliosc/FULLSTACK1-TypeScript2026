@@ -24,3 +24,41 @@
  * - Final bill
  * - Green Energy Program eligibility
  */
+
+// 1. Informasi Penggunaan dan Status Rumah
+const previousMeter: number = 25640;
+const currentMeter: number = 25892;
+const pricePerKwh: number = 1650;
+const hasSolarPanel: boolean = true;
+const hasEnergySavingMode: boolean = false;
+
+// 2. Perhitungan Konsumsi Energi dan Tagihan Dasar
+const energyConsumption: number = currentMeter - previousMeter;
+const baseBill: number = energyConsumption * pricePerKwh;
+
+// 3. Perhitungan Diskon
+// Diskon dihitung dari tagihan dasar jika syaratnya terpenuhi (true)
+const solarDiscount: number = hasSolarPanel ? (baseBill * 20) / 100 : 0;
+const energySavingDiscount: number = hasEnergySavingMode ? (baseBill * 5) / 100 : 0;
+
+const totalDiscount: number = solarDiscount + energySavingDiscount;
+
+// 4. Perhitungan Tagihan Akhir
+const finalBill: number = baseBill - totalDiscount;
+
+// 5. Penentuan Kelayakan Green Energy Program (Logika AND)
+// Rumah HANYA lolos jika SEMUA syarat ini bernilai true
+const isGreenEnergyEligible: boolean = hasSolarPanel && (energyConsumption < 300) && hasEnergySavingMode;
+
+// 6. Menampilkan Hasil (Display)
+console.log("=== Laporan Tagihan Listrik Smart Home ===");
+console.log(`Meteran Bulan Lalu : ${previousMeter}`);
+console.log(`Meteran Bulan Ini  : ${currentMeter}`);
+console.log(`Konsumsi Energi    : ${energyConsumption} kWh`);
+console.log(`------------------------------------------`);
+console.log(`Tagihan Dasar      : Rp${baseBill}`);
+console.log(`Diskon Panel Surya : -Rp${solarDiscount}`);
+console.log(`Diskon Mode Hemat  : -Rp${energySavingDiscount}`);
+console.log(`------------------------------------------`);
+console.log(`Tagihan Akhir      : Rp${finalBill}`);
+console.log(`Status Green Energy: ${isGreenEnergyEligible ? "Memenuhi Syarat ✅" : "Tidak Memenuhi Syarat ❌"}`);

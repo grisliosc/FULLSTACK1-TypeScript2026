@@ -20,26 +20,27 @@ type Student = {
 const students: Student[] = [
   {
     studentId: "TLKM123",
-    fullName: "Datta Banu",
+    fullName: "Kim Min-gyu",
     age: 16,
     isActStudent: true
   },
   
   {
     studentId: "TLKM124",
-    fullName: "Dynand Fahreza",
+    fullName: "Jang Won-young",
     age: 15,
     isActStudent: true
   },
 
   {
     studentId: "TLKM125",
-    fullName: "Nilam Allutfiana",
+    fullName: "Park Gris-li",
     age: 30,
     isActStudent: false
   }
 ];
 
+console.log("=== Data Siswa Telkom===");
 students.forEach((student, index) => {
   console.log(`\nData Siswa ke-${index + 1}`);
   console.log(`ID Siswa      : ${student.studentId}`);

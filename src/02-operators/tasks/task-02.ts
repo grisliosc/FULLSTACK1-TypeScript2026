@@ -14,3 +14,15 @@
  * Task: Store and display the result in a variable named "isEligible"
 
  */
+
+// Student information
+const finalScore: number = 90;
+const attendance: number = 67;
+const tuitionPaid: boolean = true;
+
+// Check eligibility
+const isEligible: boolean = finalScore >= 75 && attendance >= 90 && tuitionPaid === true;
+const result = isEligible ? "Kamu anak Eligible" : "Kamu bukan anak Eligible"
+
+console.log(`Apkah dia anak eligible? ${isEligible}`);
+console.log(result);

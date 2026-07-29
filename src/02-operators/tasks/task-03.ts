@@ -17,3 +17,26 @@
  * - Bonus
  * - Final salary
  */
+
+const employeeName: string = "Dimas";
+const basicSalary: number = 5000000;
+const overtimeHours: number = 12;
+const overtimeRate: number = 50000;
+
+const overtimePay: number = overtimeHours * overtimeRate;
+
+let bonus: number = 0;
+
+if (overtimeHours > 10){
+    bonus = 300000
+}
+
+const finalPayment: number = basicSalary + overtimePay + bonus;
+
+console.log("=== Laporan Gaji Karyawan ===");
+console.log(`Nama Karyawan  : ${employeeName}`);
+console.log(`Gaji Pokok     : Rp${basicSalary}`);
+console.log(`Uang Lembur    : Rp${overtimePay} (${overtimeHours} jam)`);
+console.log(`Bonus Performa : Rp${bonus}`);
+console.log(`---------------------------------`);
+console.log(`Total Gaji     : Rp${finalPayment}`);
