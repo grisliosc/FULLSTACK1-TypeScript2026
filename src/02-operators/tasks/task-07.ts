@@ -38,10 +38,11 @@ const totalAfterDiscount: number = roomSubtotal - discount;
 
 // 3. Perhitungan Pajak dan Total Akhir
 // Pajak dihitung dari total harga kamar setelah diskon ditambah biaya layanan
-const taxableAmount: number = totalAfterDiscount + serviceCharge;
-const taxAmount: number = (taxableAmount * taxRate) / 100;
 
-const finalPayment: number = taxableAmount + taxAmount;
+const taxAmount: number = (totalAfterDiscount * taxRate) / 100;
+const taxAndService: number = taxAmount + serviceCharge;
+
+const finalPayment: number = taxAndService +totalAfterDiscount;
 
 // 4. Penentuan Sarapan Gratis dengan Logika OR (||)
 // Tamu dapat sarapan gratis jika menginap >= 3 malam ATAU merupakan VIP
