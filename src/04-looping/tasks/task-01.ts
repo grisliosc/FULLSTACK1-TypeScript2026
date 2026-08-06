@@ -15,3 +15,19 @@
  * 3. After the loop finishes, display: "Attendance verification completed"
 
  */
+
+export {}; // Mencegah bentrok nama variabel dengan file lain
+
+console.log("-------------------------------------");
+
+// 1. Membuat program menggunakan for loop
+for (let i = 1; i <= 30; i++) {
+  
+  // 2. Menampilkan pesan absensi untuk setiap siswa
+  console.log(`Checking attendance for Student #${i}`);
+  
+}
+
+// 3. Menampilkan pesan setelah loop selesai
+console.log("Attendance verification completed.");
+console.log("-------------------------------------");

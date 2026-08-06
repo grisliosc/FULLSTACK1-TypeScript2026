@@ -45,3 +45,54 @@ Student Tasks
 - Use nested conditional statements.
 - Display the final registration result.
  */
+
+export {};
+
+// 1. Declare all variables (Informasi Mahasiswa)
+const studentName: string = "Nadia Putri";
+const isActiveStudent: boolean = true;
+const isTuitionPaid: boolean = true;
+
+const hasPassedProgFund: boolean = true;
+const hasPassedDBSys: boolean = true;
+const gpa: number = 3.45;
+
+const areSeatsAvailable: boolean = false;
+
+// Variabel untuk menyimpan hasil registrasi
+let registrationResult: string = "";
+
+// 2. Implement the registration workflow using nested conditional statements
+
+// Step 1: Pengecekan Status Mahasiswa (Aktif DAN Bayar SPP)
+if (isActiveStudent === true && isTuitionPaid === true) {
+  
+  // Step 2: Pengecekan Syarat Akademik (Lulus 2 Matkul Dasar DAN IPK >= 3.20)
+  if (hasPassedProgFund === true && hasPassedDBSys === true && gpa >= 3.20) {
+    
+    // Step 3: Pengecekan Ketersediaan Kursi
+    if (areSeatsAvailable === true) {
+      registrationResult = "Registration Successful";
+    } else {
+      registrationResult = "Added to Waiting List"; // Kursi penuh
+    }
+    
+  } else {
+    // Gagal di tahap akademik
+    registrationResult = "Academic Requirements Not Met";
+  }
+  
+} else {
+  // Gagal di tahap administrasi awal
+  registrationResult = "Registration Rejected";
+}
+
+// 3. Display the final registration result
+console.log("=== Hasil Registrasi Mata Kuliah Lanjutan ===");
+console.log(`Nama Mahasiswa   : ${studentName}`);
+console.log(`Status Aktif     : ${isActiveStudent ? "Ya" : "Tidak"}`);
+console.log(`Pembayaran SPP   : ${isTuitionPaid ? "Lunas" : "Belum"}`);
+console.log(`IPK Saat Ini     : ${gpa}`);
+console.log(`Ketersediaan Seat: ${areSeatsAvailable ? "Ada" : "Penuh"}`);
+console.log(`---------------------------------------------`);
+console.log(`Status Registrasi: 📝 ${registrationResult}`);
