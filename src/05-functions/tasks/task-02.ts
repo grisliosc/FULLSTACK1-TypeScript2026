@@ -21,3 +21,25 @@
  * 3. Display the bonus result inside the function.
  * 4. Call the function for every employee.
  */
+
+export {}; // Mencegah bentrok nama variabel dengan file tugas lain
+
+// 1 & 2. Membuat fungsi showBonusStatus dengan parameter nama dan nilai
+// Karena fungsi ini tidak menggunakan 'return', tipe data keluarannya adalah 'void'
+function showBonusStatus(employeeName: string, performanceScore: number): void {
+    
+    // 3. Menampilkan status bonus langsung dari dalam fungsi
+    if (performanceScore >= 85) {
+        console.log(`Pegawai: ${employeeName} | Nilai: ${performanceScore} -> Bonus Approved ✅`);
+    } else {
+        console.log(`Pegawai: ${employeeName} | Nilai: ${performanceScore} -> Bonus Not Approved ❌`);
+    }
+    
+}
+
+console.log("=== Notifikasi Bonus HR Department ===");
+
+// 4. Memanggil fungsi untuk setiap pegawai
+showBonusStatus("John Cena", 92);
+showBonusStatus("Undertaker", 76);
+showBonusStatus("Rey Mysterio", 88);
